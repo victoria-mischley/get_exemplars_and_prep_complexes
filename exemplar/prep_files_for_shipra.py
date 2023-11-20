@@ -42,12 +42,14 @@ def make_complexes(folder_path):
                 exemplar_file_name = file.name
                 exemplar_file_name_abrev = exemplar_file_name.split(".pdb")[1]
                 complex_file_path = f"{folder_path_path}/complexes/{apo_file_name}{exemplar_file_name_abrev}_Complex.pdb"
+                # apo_file_path_new = f"{folder_path_path}/apo/{apo_file_name}{exemplar_file_name_abrev}.pdb"
                 with open(apo_file_path, 'r') as f1:
                     apo_data = f1.read()
                 with open(exemplar_file_path) as f2:
                     exemplar_data = f2.read()
                 with open(complex_file_path, 'w') as f3:
                     f3.write(apo_data + "\n" + exemplar_data)
+                # shutil.copy(apo_file_path, apo_file_path_new)
 
 if __name__ == '__main__':
     args = args()
