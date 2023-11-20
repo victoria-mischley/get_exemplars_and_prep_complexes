@@ -39,7 +39,7 @@ def make_complexes(folder_path):
                 apo_file_name = file_name.split(".pdb")[0]
                 apo_file_path = f"{folder_path_path}/apo/{apo_file_name}.pdb"
                 exemplar_file_path = file
-                complex_file_path = f"{folder_path_path}/complexes/{apo_file_name}_Complex.pdb"
+                complex_file_path = f"{folder_path_path}/complexes/{apo_file_name}_{exemplar_file_path}_Complex.pdb"
                 with open(apo_file_path, 'r') as f1:
                     apo_data = f1.read()
                 with open(exemplar_file_path) as f2:
